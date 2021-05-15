@@ -1,4 +1,4 @@
-pragma solidity >=0.4.0 <0.6.0;
+pragma solidity >=0.4.21 <0.6.0;
 
 
 contract Migrations {
@@ -17,7 +17,7 @@ contract Migrations {
         lastMigrationCompleted = completed;
     }
 
-    function setCompleted(uint newAddress) public restricted {
+    function upgrade(uint newAddress) public restricted {
         Migrations upgraded = Migrations(newAddress);
         upgraded.setCompleted(lastMigrationCompleted);
     }
